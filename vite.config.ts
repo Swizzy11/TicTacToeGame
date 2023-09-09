@@ -11,5 +11,14 @@ export default defineConfig({
   define: {
     __SERVER_PORT__: process.env.SERVER_PORT || 3001,
   },
+  optimizeDeps: {
+    // include: ['linked-dep'],
+  },
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true,
+      // include: [/linked-dep/, /node_modules/],
+    },
+  },
   plugins: [react()],
 })
