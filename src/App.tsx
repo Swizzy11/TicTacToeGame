@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { routes } from './routes';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ComponentToNode } from './utils/hoc/componentToNode';
+import { NotFound } from './pages/NotFound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          {
+            routes.map((route, index) => {
+              const { component, path } = route
+              const Page = (
+                  <ComponentToNode Component={component} />
+                )
+              
+              return <Route key={index} path={path} element={Page} />
+            })
+          }
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
   );
 }
 
