@@ -3,7 +3,7 @@
     height: 100%;
   }
 
-.header {
+header {
     width: 100%;
     height: 10%;
     font-size: 20px;
@@ -31,7 +31,7 @@
         }
 }
 
-.content {
+main {
     width: 100%;
     height: 80%;
     display: flex;
@@ -40,7 +40,7 @@
     background: none;
 }
 
-.footer {
+footer {
     width: 100%;
     height: 10%;
     display: flex;
@@ -84,7 +84,7 @@
         font-size: 15vh;       
     }
 
-    .header{
+    header{
         a {
             margin-left: 85%;
         }

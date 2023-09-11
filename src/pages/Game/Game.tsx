@@ -12,17 +12,17 @@ export const Game = () => {
 
     return (
     <div className={styles.root}>
-        <header className={styles.header}>
+        <header>
             <Link to={'/start'}>
                 <Button classname='exit' onClick={onClick}>
                     Exit
                 </Button>
             </Link>
         </header>
-        <div className={styles.content}>
+        <main>
             <PlayFieldLayout />
-        </div>
-        <footer className={styles.footer}>
+        </main>
+        <footer>
             <b>TG: <a href="/">@kotovskij01</a></b>
             <b>Mail: kotovskij.01@yandex.ru</b>
         </footer>
