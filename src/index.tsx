@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css'
 
-if(document.location.href === 'http://localhost:3000/') {
-  document.location.href = 'http://localhost:3000/start'
+if(document.location.pathname === '/') {
+  document.location.pathname = `/start`
 }
 
 const root = ReactDOM.createRoot(
